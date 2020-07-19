@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        function Calcula() {
+            var nome = document.getElementById("nome").value;
+            var mat = document.getElementById("mat").value;
+            var valor = parseFloat(document.getElementById("valor").value);
+            var ho = parseFloat(document.getElementById("ho").value);
+            var he = parseFloat(document.getElementById("he").value);
+            var totho = ho * valor;
+            var tothe = he * valor * 1.5;
+            var total = totho + tothe;
+            var x = nome;
+            document.getElementById("respNome").innerHTML=x;
+            document.getElementById("respMat").innerHTML=mat;
+            document.getElementById("respValor").innerHTML=valor;
+            document.getElementById("respHO").innerHTML=ho;
+            document.getElementById("respHE").innerHTML=he;
+            document.getElementById("respTotho").innerHTML=totho;
+            document.getElementById("respTothe").innerHTML=tothe;
+            document.getElementById("respTotal").innerHTML=total;
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <p>Nome funcionário(a): <input type="text" id="nome" name="formNome" placeholder="Digite seu nome" size="40" autofocus></p>
+        <p>Matrícula: <input type="text" id="mat" name="formMat" placeholder="Digite sua matrícula" size="40"></p>
+        <p>Valor da hora: <input type="text" id="valor" name="formValor" size="40" placeholder="R$"></p>
+        <p>Horas trabalhadas: <input type="text" id="ho" name="formHO" size="40"></p>
+        <p>Horas extras: <input type="text" id="he" name="formHE" size="40"></p>
+    </form>
+    <button onclick="Calcula()">Calcular</button>
+    <br>
+    <hr>
+    <div>Prezado(a), <span id="respNome">XXX</span> (matrícula <span id="respMat">XXX</span>)!</div>
+    <br>
+    <div>Informamos que, com base nas informações lançadas em sistema, você trabalhou <span id="respHO">XXX</span> horas ordinárias e <span id="respHE">XXX</span> extras.</div>
+    <br>
+    <div>Desta forma, vez que o valor que você recebe por hora é R$<span id="respValor">XXX</span>, o total a receber sobre horas ordinárias trabalhadas é R$<span id="respTotho">XXX</span> e sobre horas extras R$<span id="respTothe">XXX</span>.</div>
+    <br>
+    <div>Salário bruto: R$<span id="respTotal">XXX</span></div>
+</body>
+</html>

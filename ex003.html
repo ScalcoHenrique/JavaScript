@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(115, 115, 168);
+            color: white;
+            font: normal 20pt Arial;
+        }
+        h1 {
+            color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        var n1 = Number.parseInt(prompt('Digite um número:'))
+        var n2 = Number.parseInt(window.prompt('Digite outro número:'))
+        var s = n1 + n2
+        window.alert(`A soma entre ${n1} e ${n2} é ${s}.`)
+        /*
+        3 Tipos de conversão para númeral:
+        Number.parseInt(n) -> Força a conversão para inteiro
+        Number.parseFloat(n) -> Força a conversão para real
+        Number(n) -> Deixa o JS escolher o formato
+
+        Conversão de número para String
+        String(n)
+        n.toString()
+
+        Formatação de Strings
+        - Básicas de contatenação
+        - Novas formas nas versões mais recentes do JS temos os Templates Strings: `${}`
+        - s.length()
+        - s.toUpperCase()
+        - s.toLowerCase()
+        */
+    </script>
+</body>
+</html>
