@@ -20,7 +20,22 @@
     <p>Já me livrei da maldição.</p>
     <script>
         nome = window.prompt('Qual é o seu nome?')
-        document.write(`Olá, ${nome}! Seu nome tem ${nome.length} letras.`)
+        document.writeln(`Olá, <strong>${nome}</strong>! Seu nome tem ${nome.length} letras.</br>`)
+        document.writeln(`Seu nome em maiúsculas é ${nome.toUpperCase()}.</br>`)
+        document.writeln(`Seu nome em minúsculas é ${nome.toLowerCase()}.`)
+        sal = Number.parseFloat(window.prompt('Digite o seu salário: '))
+        document.writeln(`O seu salário é: ${sal.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}`)
+
+    /*
+    FORMATAÇÃO DE NÚMEROS:
+    Casas decimais --> n.toFixed(y) --> y = número de casas decimais
+
+    Trocar separador de casas --> n.toFixed(y).replace('.', ','). --> Troca o primeiro pelo segundo
+    
+    Formatação monetária --> n.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})
+    Não precisa do replace se for rodar no navegador.
+    */
+
     </script>
 </body>
 </html>
