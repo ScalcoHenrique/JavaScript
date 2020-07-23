@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiros passos com DOM</title>
+    <style>
+        body {
+            background: #00F;
+            color: white;
+            font: normal 18pt Times;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Iniciando estudos com DOM</h1>
+    <p>Aqui vai o resultado</p>
+    <p>Aprendendo a usar o <strong>DOM</strong> em JavaScript</p>
+    <p>Document Objetc Model</p>
+    <p>Conjunto de Objetos dentro do seu navegador que vai dar acesso aos componentes internos do seu website</p>
+    <h2>Árvore DOM</h2>
+    <P>Toda árvore começa com a Window. É um objeto DOM</P>
+    <p>Location: URL, páginas atual e anteriores</p>
+    <p>Document: documento atual. Dentro dele existe o HTML. E dentro dele, existem mais dois filhos chamados head e
+        body.</p>
+    <p>Existem as nomenclaturas parent e child</p>
+    <p>History: guarda todo o caminho percorrido</p>
+    <h2>Métodos de seleçao dos Elementos da Árvore DOM</h2>
+    <ul>
+        <li>Marca</li>
+        <p>
+            Método: <code>getElementsByTagName()</code><br>
+            Dessa forma, é possível selecionar mais de um objeto, vez que existem vários objetos do mesmo tipo. A tag de
+            parágrafo é um exemplo.
+        </p>
+        <p><strong>Este é o 11º parágrafo</strong>, que será usado de exemplo para a seleção via Tag.</p>
+        <li>ID</li>
+        <p>
+            Método <code>getElementById()</code><br>
+            Aqui já é possível selecionar as tags que possuem identificação pessoal
+        </p>
+        <p id='testeID'>Este parágrafo possui a id "testeID".</p>
+        <li>Nome</li>
+        <p name='testeName'>
+            Método: <code>getElementsbyName()</code><br>
+            Seleção de elementos que possuem nome.
+        </p>
+        <p name='testeName'>Este parágrafo possui o name "testeName".</p>
+        <li>Classe</li>
+        <p>
+            Método: <code>getElementsByClassName()</code><br>
+            Seleção de elementos que possuem classe determinada
+        </p>
+        <p class='testeClasse'>Este parágrafo possui a class "testeClasse"</p>
+        <li>Seletor</li>
+        <p>
+            Método: <code>querySelector()</code> e <code>querySelectorAll()</code><br>
+            Seleção de elementos HTML através de class (.) ou ID (#) como parâmetro do método entre áspas simples ou duplas.
+        </p>
+        <p class="testeSeletor">Este parágrafo possui a class "testeSeletor".</p>
+        <p id="testeSeletorID">Este parágrafo possui o ID "testeSeletorID".</p>
+    </ul>
+
+    <p>Abaixo estão alguns exemplos livres do uso do JS:</p>
+
+    <script>
+        /*Testes das estruturas DOM*/
+        /*Escrever no documento*/
+        window.document.writeln("Olá, Mundo!</br>")
+        window.document.writeln(window.document.charset + "</br>")
+        window.document.writeln(window.navigator.appName + "</br>")
+        window.document.writeln(window.document.URL + "</br>")
+
+        /*SELEÇÃO POR MARCA / TAG. O número dentro da chave é a posição do elemento. Inicia-se em 0 */
+        var corpo = window.document.body
+        var p1 = window.document.getElementsByTagName('p')[10]
+        window.document.write('Está escrito assim: ' + p1.innerText + "</br>") //innerText traz somente o texto, sem as formatações
+        p1.style.color = 'pink'
+        corpo.style.background = 'black'
+        window.document.write('Com o innerHTML, fica assim: ' + p1.innerHTML + '</br>')
+        //Se for usado no alert, as tags internas ficarão visíveis
+
+        //SELEÇÃO POR ID
+
+        var pID = window.document.getElementById('testeID')
+        pID.style.background = 'blue'
+        pID.innerText = 'Estou aguardando...'
+        //É possível fazer os procedimentos em uma única linha, sem a criação de váriável
+        window.document.getElementById('testeID').style.color = 'red'
+
+        //SELEÇÃO POR NOME
+        window.document.getElementsByName('testeName')[1].style.color = 'blue'
+
+        //SELEÇÃO POR CLASSE
+        window.document.getElementsByClassName('testeClasse')[0].style.color = 'yellow'
+
+        //SELEÇÃO POR SELETOR --> Nova forma a partir do ECMAScript 5
+        //Classe é representada por ponto (.)
+        window.document.querySelector('p.testeSeletor').innerHTML = 'Alterando pela classe.'
+        //ID é representada por #
+        window.document.querySelector('p#testeSeletorID').style.background = 'purple'
+    </script>
+</body>
+
+</html>
