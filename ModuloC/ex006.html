@@ -6,18 +6,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eventos DOM</title>
     <style>
-        body {
-            background: #000;
+        div#area {
+            font: normal 20pt arial;
+            background: rgb(42, 139, 42);
             color: white;
-            font: normal 18pt Times;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
         }
     </style>
 </head>
 
 <body>
-
+    <div id="area"> <!--onclick="clicar()" onmouseenter="entrar()" onmouseout="sair()"-->
+        Interaja...
+    </div>
     <script>
+        //Detecção de erro no navegador Chrome: inspecionar
 
+
+        //Variável para seleção da div
+        var area = window.document.getElementById('area')
+        //Posso chamar as funções tanto dentro do HTML, como através dos EventListeners:
+        area.addEventListener('click', clicar)
+        area.addEventListener('mouseenter', entrar)
+        area.addEventListener('mouseout', sair)
+
+        //Funções
+        function clicar() {
+            area.innerText = 'Clicou!'
+            area.style.background = 'red'
+        }
+        function entrar() {
+            area.innerText = 'Entrou!'
+        }
+        function sair() {
+            area.innerText = 'Saiu!'
+            area.style.background = 'green'
+        }
     </script>
 </body>
 
