@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificardor de Idade</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+
+<body>
+    <header>
+        <h1>Verificardor de Idade</h1>
+    </header>
+
+    <section>
+        <div>
+            <p>
+                Ano de Nascimento: <input type="number" name="txtAno" id="txtAno" min="0" autofocus>
+            </p>
+            <p>
+                Sexo:
+                <input type="radio" name="radSexo" id="mas" checked>
+                <label for="mas">Masculino</label>
+                <input type="radio" name="radSexo" id="fem">
+                <label for="fem">Feminino</label>
+            </p>
+            <p>
+                <input type="button" value="Verificar" onclick="verificar()">
+            </p>
+        </div>
+        <div id="res">
+            <p>
+                Preencha os dados acima para ver o resultado!
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        &copy;ScalcoHenrique - Com base no Curso em Vídeo
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
