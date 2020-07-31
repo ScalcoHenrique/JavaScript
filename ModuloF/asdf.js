@@ -1,5 +1,5 @@
 let valores = [8, 1, 7, 4, 2, 9]
-valores.sort()
+//valores.sort()
 /*
 console.log(num);
 
@@ -18,13 +18,14 @@ num.sort() //Método que ordena crescentemente os elementos do vetor
 for (posicao = 0; posicao < num.length; posicao++) {
     console.log(`O ${posicao + 1}º elemento do vetor "num" tem o valor ${num[posicao]}`);
 }
-*/
 //A PARTIR DO ECMASCRIPT 5:
 for (let pos in valores) {
     console.log(`O ${pos}º elemento do vetor "num" tem o valor ${valores[pos]}`);
 }
+*/
 
 
-//Buscar valores: vetor.indexOf(parametro)
+//Buscar valores: 
+console.log(valores.indexOf(8));
 
 
